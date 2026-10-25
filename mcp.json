@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "al-zahrawi-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "ZAHRAWI",
+        "TARGET_CHAIN": "Solana",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "simulate_catgut_biodegradation",
+          "description": "Calculates enzymatic tensile degradation rates for internal catgut sutures",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "tissue_ph": {
+                "type": "number"
+              },
+              "days_implanted": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "tissue_ph"
+            ]
+          }
+        },
+        {
+          "name": "verify_surgical_instrument_geometry",
+          "description": "Validates ergonomic leverage and mechanical cutting force tolerances for surgical tools",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "tool_id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "tool_id"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
